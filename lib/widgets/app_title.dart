@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pokedex/constants/constants.dart';
 import 'package:pokedex/constants/ui_helper.dart';
 

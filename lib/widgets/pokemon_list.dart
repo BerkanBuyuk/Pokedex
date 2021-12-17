@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/constants/ui_helper.dart';
 import 'package:pokedex/model/Pokemon_Model.dart';
 import 'package:pokedex/services/Pokedex_API.dart';
+import 'package:pokedex/widgets/pokelist_item.dart';
 
 class PokemonList extends StatefulWidget {
-  const PokemonList({Key? key}) : super(key: key);
+  PokemonList({Key? key}) : super(key: key);
 
   @override
   _PokemonListState createState() => _PokemonListState();
@@ -26,14 +28,10 @@ class _PokemonListState extends State<PokemonList> {
         if(snapshot.hasData){
           List<PokemonModel> _myList = snapshot.data!;
 
-          return ListView.builder(
-            itemCount: _myList.length,
-            itemBuilder: (context, index) {
-              var currentPokemon = _myList[index];
-              return ListTile(
-                title: Text(currentPokemon.name.toString(),),
-              );
-            },
+          return GridView.builder(
+              itemCount: _myList.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: UIHelper.getAppCrossAxisCount().toInt()),
+              itemBuilder: (context, index) => PokeListItem(pokemon: _myList[index]),
           );
         }else if (snapshot.hasError){
           return const Center(child: Text("Hata"),);
