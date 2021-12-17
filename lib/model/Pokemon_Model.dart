@@ -49,6 +49,11 @@ class PokemonModel {
   List<Evolution>? prevEvolution;
   List<Evolution>? nextEvolution;
 
+  @override
+  String toString(){
+    return name! ;
+  }
+
   factory PokemonModel.fromJson(Map<String, dynamic> json) => PokemonModel(
     id: json["id"] == null ? null : json["id"],
     num: json["num"] == null ? null : json["num"],
