@@ -3,7 +3,7 @@
 
 --- 
 
-<h2 align="center">⁉️ About the Project ⁉️</h2>
+<h2 align="center">⁉️About the Project ⁉️</h2>
 
 <h3 align="center">- This APP is made with Flutter.</h3>
 <h3 align="center">- It is an application that shows the features of Pokemon.</h3>
